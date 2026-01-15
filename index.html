@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eval | JavaScript Playground | Js Eval | Js Play | Dev2Forge Eval JavaScript</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Eval | JavaScript Playground | Js Eval | Js Play | Dev2Forge Eval JavaScript</title>
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-  <script src="https://unpkg.com/@antonz/codapi/dist/snippet.js"></script>
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" />
 
-<body>
-  <header class="is-flex is-justify-content-center">
-    <h1><code lang="js">eval("Your Code")</code></h1>
-  </header>
-  
-  <main class="mt-2 mx-4">
-    <div class="play-ctn">
-      <pre class="pre-code-js" id="js-to-run">console.log("This is amazing!")</pre>
-      <codapi-snippet engine="browser" sandbox="javascript" editor="basic" selector="#js-to-run"></codapi-snippet>
-    </div>
-  </main>
-  
-</body>
+    <link rel="stylesheet" href="https://unpkg.com/@antonz/codapi@0.20.0/dist/snippet.css" />
+    <script defer src="https://unpkg.com/@antonz/codapi/dist/snippet.js"></script>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <script defer type="module" src="./assets/js/main.js"></script>
+  </head>
 
+  <body>
+    <header class="is-flex is-justify-content-center is-align-content-center">
+      <div class="typewriter">
+        <h1 class="is-size-4">eval("Your Code") | Playground</h1>
+      </div>
+    </header>
+
+    <main class="mt-2 mx-4">
+      <div class="play-ctn">
+        <pre class="pre-code-js" id="js-to-run" spellcheck="false"><code class="highlight" id="code-run"></code></pre>
+        <codapi-snippet id="codapi-snippet" engine="browser" sandbox="javascript" editor="basic" selector="#js-to-run code">
+          <select id="select-mode">
+            <option value="plain" selected>Plain Text</option>
+            <option value="table">Table</option>
+            <option value="svg">SVG</option>
+            <option value="html">HTML</option>
+            <option value="iframe">Inline Iframe</option>
+            <option value="dom">Interactive DOM</option>
+          </select>
+        </codapi-snippet>
+      </div>
+    </main>
+  </body>
 </html>

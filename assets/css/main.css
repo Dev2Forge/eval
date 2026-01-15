@@ -1,0 +1,22 @@
+@import url('./external.css');
+
+codapi-snippet {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(243, 243, 243, 0.674);
+  padding: 20px;
+}
+
+codapi-output pre{
+    overflow-y: scroll;
+    max-height: 40vh;
+}
+
+codapi-output pre{
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+codapi-output pre::-webkit-scrollbar{
+    display: none;
+}
