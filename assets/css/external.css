@@ -5,36 +5,54 @@
 * Browsers: last 4 version
 */
 
+.typewriter {
+  width: fit-content;
+}
+
 .typewriter h1 {
   overflow: hidden;
-  border-right: .15em solid orange;
+  border-right: 0.15em solid orange;
   white-space: nowrap;
   margin: 0 auto;
-  letter-spacing: .15em;
-  -webkit-animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
-          animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
+  letter-spacing: 0.15em;
+  -webkit-animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 /* The typing effect */
 @-webkit-keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* The typewriter cursor effect */
 @-webkit-keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
 }
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
 }
