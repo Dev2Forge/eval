@@ -26,37 +26,51 @@
     <meta name="twitter:description" content="Test and run JavaScript code snippets in a powerful playground." />
     <meta name="twitter:image" content="./assets/images/png/preview.png" />
 
+    <link rel="shortcut icon" href="./assets/images/svg/favicon.svg" type="image/x-icon" />
+
     <link rel="stylesheet" href="https://unpkg.com/@antonz/codapi@0.20.0/dist/snippet.css" />
     <script defer src="https://unpkg.com/@antonz/codapi/dist/snippet.js"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
     <link rel="stylesheet" href="./assets/css/main.css" />
     <script defer type="module" src="./assets/js/main.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9KF6BCPRP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-X9KF6BCPRP');
+    </script>
   </head>
 
   <body>
     <header class="m-3">
       <div class="fixed-grid">
         <div class="grid">
-          <div class="logo cell has-text-left">
-            <img src="./assets/images/svg/logo-eval.svg" alt="Dev2Forge Eval Logo" />
+          <div class="logo cell has-text-left is-fixed-top">
+            <img src="./assets/images/svg/favicon.svg" width="50px" alt="Dev2Forge Eval Logo" />
           </div>
-          <div class="cell has-text-right">
-            <a class="github-button" href="https://github.com/Dev2Forge/eval" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" data-show-count="true" aria-label="Star Dev2Forge/eval on GitHub">Star</a>
+          <div class="cell has-text-right is-flex is-justify-content-flex-end is-align-items-center">
+            <div class="mr-1"><a class="github-button" href="https://github.com/Dev2Forge/eval/fork" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-repo-forked" aria-label="Fork Dev2Forge/eval on GitHub">Fork</a></div>
+            <div class="mr-1"><a class="github-button" href="https://github.com/Dev2Forge" data-color-scheme="no-preference: dark; light: dark; dark: dark;" aria-label="Follow @Dev2Forge on GitHub">Follow</a></div>
+            <div class="mr-1"><a class="github-button" href="https://github.com/Dev2Forge/eval" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-star" aria-label="Star Dev2Forge/eval on GitHub">Star</a></div>
           </div>
         </div>
       </div>
 
       <div class="ctn-typewriter">
         <div class="typewriter">
-          <h1 class="is-italic is-size-4">eval("Your Code") | Playground</h1>
+          <h1 class="is-italic">eval("Your Code") | Playground</h1>
         </div>
       </div>
     </header>
 
     <main class="mt-2 mx-4 mb-6">
       <div class="play-ctn">
-        <details open>
+        <details open id="details-code-run">
           <summary>Code to run</summary>
           <pre class="pre-code-js" id="js-to-run" spellcheck="false"><code id="code-run"></code></pre>
         </details>
@@ -73,6 +87,14 @@
         <div id="codapi-snippet-ctn"></div>
       </div>
     </main>
+
+    <div class="area">
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
 
     <footer>
       <span>© <a href="https://dev2forge.is-a.software">Dev2Forge</a> <span id="year-footer"></span> - <a href="https://github.com/Dev2Forge/eval/" target="_blank">Eval JavaScript Playground</a> - <a href="https://github.com/Dev2Forge/eval/blob/main/LICENSE" target="_blank">MIT</a></span>
