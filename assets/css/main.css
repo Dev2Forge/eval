@@ -1,6 +1,7 @@
 @import url('https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css');
 @import url('./external.css');
 @import url('./override.css');
+@import url('./bg_animation.css');
 
 :root {
   --bulma-primary: #ffa500;
@@ -9,6 +10,7 @@
 
 body {
   font-family: 'Fira Code', monospace;
+  background: transparent;
 }
 
 header h1 {
@@ -19,6 +21,14 @@ header h1 {
 pre:focus,
 code:focus {
   outline: none;
+}
+
+.output-mode-select {
+  border: none;
+  border-radius: 5px 15px;
+  box-shadow: 0 2px 6px rgba(243, 243, 243, 0.311);
+  padding: 10px 15px;
+  margin-bottom: 10px;
 }
 
 .output-mode-select:hover {
@@ -55,19 +65,21 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-footer > p {
-  position: fixed;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-}
-
 a {
   color: #ffa500;
+}
+
+#details-code-run summary:hover {
+  cursor: pointer;
+}
+
+.pre-code-js {
+  cursor: text;
+  background: transparent;
+  backdrop-filter: blur(5px);
 }

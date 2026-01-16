@@ -10,6 +10,12 @@ codapi-output pre {
   max-height: 40vh;
 }
 
+codapi-output,
+codapi-output * {
+  background: transparent;
+  backdrop-filter: blur(5px);
+}
+
 codapi-output pre {
   scrollbar-width: none;
   -ms-overflow-style: none;
