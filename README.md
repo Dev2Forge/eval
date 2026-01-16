@@ -1,3 +1,3 @@
-# Dev2Forge Eval
+# Eval <img src="./assets/images/svg/favicon.svg" alt="Eval Logo" width="30" height="30"/>
 
-A simple javascript playground using [codapi](https://github.com/antonz/codapi)
+A simple javascript playground using [codapi-js](https://github.com/nalgeon/codapi-js/)
