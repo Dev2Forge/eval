@@ -1,7 +1,7 @@
 codapi-snippet {
   width: 100%;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(243, 243, 243, 0.674);
+  box-shadow: 0 2px 5px var(--color-zinc-100);
   padding: 20px;
 }
 
@@ -26,29 +26,29 @@ codapi-output pre::-webkit-scrollbar {
 }
 
 codapi-output table {
-  border: 1px solid #f3f3f3;
+  border: 1px solid var(--color-zinc-100);
   padding: 10px;
   width: 100%;
 }
 
 codapi-output table th,
 codapi-output table td {
-  border: 1px solid #f3f3f3;
+  border: 1px solid var(--color-zinc-100);
   padding: 10px;
 }
 
 codapi-output table th {
-  background-color: #0000003b;
+  background-color: var(--color-gray-950);
   text-align: center !important;
 }
 
 codapi-toolbar > button {
   border-radius: 5px 15px;
-  box-shadow: 0 2px 6px rgba(243, 243, 243, 0.3);
+  box-shadow: 0 2px 6px var(--color-zinc-400);
   padding: 10px 15px;
 }
 
 codapi-toolbar > button:hover {
   cursor: pointer;
-  background-color: #ffa60065;
+  background-color: var(--color-amber-700);
 }

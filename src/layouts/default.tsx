@@ -35,7 +35,7 @@ const DefaultLayout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         </div>
       </header>
 
-      <main className="mt-2 mx-4 mb-6">{children}</main>
+      <main className="mx-1.5 min-w-90 w-full">{children}</main>
 
       <footer>
         <span>
