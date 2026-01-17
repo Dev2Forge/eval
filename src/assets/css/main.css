@@ -1,7 +1,5 @@
-@import url('https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css');
 @import url('./external.css');
 @import url('./override.css');
-@import url('./bg_animation.css');
 
 :root {
   --bulma-primary: #ffa500;
@@ -10,7 +8,6 @@
 
 body {
   font-family: 'Fira Code', monospace;
-  background: transparent;
 }
 
 header h1 {
