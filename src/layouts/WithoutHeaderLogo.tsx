@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { Outlet } from 'react-router-dom';
 
-const DefaultLayout: React.FC = () => {
+const WithoutHeaderTitle: React.FC = () => {
   return (
     <>
       <Header>
@@ -14,12 +14,6 @@ const DefaultLayout: React.FC = () => {
             <img src="./src/assets/images/svg/favicon.svg" width="50px" alt="Dev2Forge Eval Logo" />
           </div>
           <GithubButtons />
-        </div>
-
-        <div className="ctn-typewriter">
-          <div className="typewriter">
-            <h1 className="italic text-[10px] lg:text-base sm:text-xs md:text-sm">eval("Your Code") | Playground</h1>
-          </div>
         </div>
       </Header>
 
@@ -32,4 +26,4 @@ const DefaultLayout: React.FC = () => {
   );
 };
 
-export default DefaultLayout;
+export default WithoutHeaderTitle;

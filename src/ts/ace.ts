@@ -1,0 +1,3 @@
+export const INITIAL_CODE = `const req = await fetch('https://jsonplaceholder.typicode.com/todos/');
+const data = await req.json();
+console.log(data);`;
