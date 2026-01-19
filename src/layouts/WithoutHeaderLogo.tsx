@@ -17,7 +17,7 @@ const WithoutHeaderTitle: React.FC = () => {
         </div>
       </Header>
 
-      <MainContainer>
+      <MainContainer classesAdditional="sm:mt-[-60px] lg:mt-[-60px] md:mt-[-60px] mt-[-20px]">
         <Outlet />
       </MainContainer>
 

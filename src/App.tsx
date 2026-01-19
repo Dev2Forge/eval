@@ -1,13 +1,9 @@
 import { Suspense, lazy, useEffect, useState } from 'react';
-import Home from './pages/Home';
-
 import { Route, Routes } from 'react-router-dom';
-// import { Toaster } from 'react-hot-toast';
-
-// import Loader from './common/Loader';
 import { routesLayoutDefault, routesLayoutWithoutTitle } from './routes';
 import './App.css';
 import WithoutHeaderTitle from './layouts/WithoutHeaderLogo';
+import LoaderInfinity from './components/Loader';
 
 const DefaultLayout = lazy(() => import('./layouts/default'));
 
@@ -20,10 +16,9 @@ function App() {
 
   return loading ? (
     // <Loader />
-    <div>Loading...</div>
+    <LoaderInfinity />
   ) : (
     <>
-      {/* <Toaster position="top-right" reverseOrder={false} containerClassName="overflow-auto" /> */}
       <Routes>
         <Route element={<DefaultLayout />}>
           {routesLayoutDefault.map((routes, index) => {
@@ -33,8 +28,7 @@ function App() {
                 key={index}
                 path={path}
                 element={
-                  // <Suspense fallback={<Loader />}>
-                  <Suspense fallback={<div>Loading...</div>}>
+                  <Suspense fallback={<LoaderInfinity />}>
                     <Component />
                   </Suspense>
                 }
@@ -50,8 +44,7 @@ function App() {
                 key={index}
                 path={path}
                 element={
-                  // <Suspense fallback={<Loader />}>
-                  <Suspense fallback={<div>Loading...</div>}>
+                  <Suspense fallback={<LoaderInfinity />}>
                     <Component />
                   </Suspense>
                 }

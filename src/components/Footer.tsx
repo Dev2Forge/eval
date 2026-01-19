@@ -3,8 +3,7 @@ export default function Footer() {
   return (
     <footer>
       <span>
-        © <a href="https://dev2forge.is-a.software">Dev2Forge</a>
-        <span id="year-footer">{year}</span> -{' '}
+        © <a href="https://dev2forge.is-a.software">Dev2Forge</a> - <span id="year-footer">{year}</span> -{' '}
         <a href="https://github.com/Dev2Forge/eval/" target="_blank" rel="noopener noreferrer">
           Eval JavaScript Playground
         </a>{' '}

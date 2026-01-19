@@ -1,2 +1,8 @@
 @import url('./assets/css/main.css');
 @import 'tailwindcss';
+@plugin "daisyui";
+
+.daisyui-class {
+  margin: 0 !important;
+  padding: 0 !important;
+}
