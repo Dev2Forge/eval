@@ -15,13 +15,10 @@ export default function Home() {
       <div className="col p-3">
         <article>
           <p>Welcome to the Home Page</p>
-
           <div className="mt-5 hover-3d w-full">
-            {/* content */}
             <figure className="w-full rounded-2xl">
-              <img className="rounded-2xl shadow shadow-md shadow-amber-300" src="./src/assets/images/png/preview.png" alt="" />
+              <img className="rounded-2xl" src="./src/assets/images/png/preview.png" alt="Playground preview" />
             </figure>
-            {/* 8 empty divs needed for the 3D effect */}
             <div></div>
             <div></div>
             <div></div>
