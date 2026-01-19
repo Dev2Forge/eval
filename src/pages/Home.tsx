@@ -1,10 +1,38 @@
-import { Link } from 'react-router-dom';
-
 export default function Home() {
   return (
-    <>
-      <p>Welcome to the Home Page</p>
-      <Link to="/playground">Go to Playground</Link>
-    </>
+    <div className="mt-9 w-full grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
+      <div className="col p-3">
+        <div className="w-full flex items-center justify-center ctn-typewriter">
+          <div className="typewriter">
+            <h1 className="italic text-[10px] lg:text-base sm:text-xs md:text-sm">eval("Your Code") | Playground</h1>
+          </div>
+        </div>
+        <article className="mt-4">
+          <p>Try executing your code in the playground, since it supports multiple languages like JavaScript, Python, and themes both light and dark.</p>
+        </article>
+      </div>
+
+      <div className="col p-3">
+        <article>
+          <p>Welcome to the Home Page</p>
+
+          <div className="mt-5 hover-3d w-full">
+            {/* content */}
+            <figure className="w-full rounded-2xl">
+              <img className="rounded-2xl shadow shadow-md shadow-amber-300" src="./src/assets/images/png/preview.png" alt="" />
+            </figure>
+            {/* 8 empty divs needed for the 3D effect */}
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </article>
+      </div>
+    </div>
   );
 }

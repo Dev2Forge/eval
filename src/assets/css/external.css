@@ -10,6 +10,8 @@
 }
 
 .typewriter h1 {
+  color: var(--color-amber-500);
+  font-weight: bold;
   overflow: hidden;
   border-right: 0.15em solid var(--color-orange-400);
   white-space: nowrap;

@@ -21,7 +21,7 @@ export default function Playground() {
   useEffect(() => {}, []);
 
   return (
-    <>
+    <div className="sm:mt-[-60px] lg:mt-[-60px] md:mt-[-60px] mt-[-20px]">
       <div className="w-full ms-[90px]">
         <Selector listSelectors={modes} startValue={mode} setValue={setMode} selectClasses="custom-select bg-zinc-900 border-0 focus-visible:outline-none rounded-2xl p-1 m-4" optionClasses="selectorOption" />
         <Selector listSelectors={themes} startValue={theme} setValue={setTheme} selectClasses="custom-select bg-zinc-900 border-0 focus-visible:outline-none rounded-2xl p-1 m-4" optionClasses="selectorOption" />
@@ -44,6 +44,6 @@ export default function Playground() {
           setOptions={{ useWorker: false, enableMultiselect: true, enableBasicAutocompletion: true, enableLiveAutocompletion: true, enableSnippets: true, enableMobileMenu: true, showLineNumbers: true, tabSize: 4 }}
         />
       </ContainerEditor>
-    </>
+    </div>
   );
 }
