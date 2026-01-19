@@ -1,7 +1,6 @@
 @import url('https://cdn.jsdelivr.net/npm/ace-builds@1.43.5/css/ace.min.css');
 
 #editor {
-  box-shadow: 0 2px 6px var(--color-zinc-100);
   max-width: 95vw !important;
   height: 10vh !important;
 }
@@ -9,4 +8,5 @@
 #blah2 {
   width: 95vw !important;
   height: 40vh !important;
+  box-shadow: 0 2px 6px var(--color-zinc-950);
 }

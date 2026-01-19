@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@antonz/codapi": "^0.20.0",
     "@tailwindcss/vite": "^4.1.18",
     "ace-builds": "^1.43.5",
+    "axios": "^1.13.2",
     "react": "^19.2.0",
     "react-ace": "^14.0.1",
     "react-dom": "^19.2.0",

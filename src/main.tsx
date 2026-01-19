@@ -5,8 +5,8 @@ import { BrowserRouter } from 'react-router-dom';
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter basename="/eval/">
-    <StrictMode>
-      <App />
-    </StrictMode>
+    {/* <StrictMode> */}
+    <App />
+    {/* </StrictMode> */}
   </BrowserRouter>,
 );

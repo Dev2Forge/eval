@@ -1,3 +1,6 @@
+import type { Mode } from 'ace-builds/src-noconflict/ext-modelist';
+import axios from 'axios';
+
 export enum ECodapiLanguagesWithoutServer {
   JAVASCRIPT = 'Javascript|browser',
   FETCH = 'Fetch|browser',
@@ -44,4 +47,118 @@ export enum ECodapiLanguagesWithServer {
   LATEX = 'Latex|codapi',
   MERMAID = 'Mermaid|codapi',
   RIPGREP = 'Ripgrep|codapi',
+}
+
+export const OUTPUT_MODES = [{ text: 'Plain text' }, { table: 'JSON like a table' }, { svg: 'SVG' }, { html: 'HTML elements' }, { dom: 'DOM elements, like chart.js' }];
+
+class Response {
+  status?: number;
+  data?: any;
+  error?: any;
+
+  constructor(status: number = 200, data: any = null, error: any = null) {
+    this.status = status;
+    this.data = data;
+    this.error = error;
+  }
+}
+
+interface ICodapiExecData {
+  code: string;
+  mode: string;
+  timeout?: number;
+}
+
+function changeJsToTs(m: string): string {
+  let mode = m.toLowerCase();
+
+  if (mode === 'javascript') {
+    mode = 'typescript';
+  }
+
+  return mode;
+}
+
+export async function exec(data: ICodapiExecData): Promise<Response> {
+  let response: Response = new Response();
+  // const mode = changeJsToTs(data.mode);
+  const dataSend = { sandbox: data.mode, command: 'run', files: { '': data.code }, engine: 'browser' };
+
+  try {
+    const req = await axios.post('https://api.codapi.org/v1/exec', dataSend);
+    const res = await req.data;
+    response.status = req.status;
+    response.data = res;
+  } catch (e) {
+    response.error = e;
+  }
+
+  return response;
+}
+
+export class CodapiEngineResponse {
+  engine: string;
+  mode: string;
+  caption: string;
+
+  constructor(engine: string, mode: string, caption: string) {
+    this.engine = engine;
+    this.mode = mode;
+    this.caption = caption;
+  }
+}
+
+export function getEngines(type: string = 'without'): CodapiEngineResponse[] {
+  let response: CodapiEngineResponse[] = [];
+  const obj = type === 'with' ? ECodapiLanguagesWithServer : ECodapiLanguagesWithoutServer;
+
+  Object.values(obj).forEach((lang: string) => {
+    const [caption, engine] = lang.split('|');
+    const mode = caption.charAt(0).toLowerCase() + caption.slice(1);
+    response.push(new CodapiEngineResponse(engine, mode, caption));
+  });
+
+  return response;
+}
+
+export function getEngineByMode(mode: string, type: string = 'without'): CodapiEngineResponse | null {
+  const engines = getEngines(type);
+  const engine = engines.find((e) => e.mode.toLowerCase() === mode.toLowerCase());
+  return engine || null;
+}
+
+export function filterEngines(search: Mode[], type: string = 'without'): CodapiEngineResponse[] {
+  let engines = getEngines(type);
+  const filtered: CodapiEngineResponse[] = [];
+
+  search.forEach((s) => {
+    const engine = engines.find((e) => e.mode.toLowerCase() === s.name.toLowerCase());
+    if (engine) {
+      filtered.push(engine);
+    }
+  });
+
+  return filtered;
+}
+
+export function emulateCodapiClickRun() {
+  const toolbarButtons = document.querySelectorAll('codapi-toolbar button');
+  toolbarButtons.forEach((btn: Element) => {
+    if (btn.textContent === 'Run') {
+      (btn as HTMLElement).click();
+    }
+  });
+  console.log(toolbarButtons);
+}
+
+export function getCodapiOutput(newContainerSelector: string, tag: string = 'pre'): string | null {
+  const output = document.querySelector(`codapi-output ${tag}`);
+  const newContainer = document.querySelector(newContainerSelector);
+
+  if (output !== null && newContainer !== null) {
+    newContainer.innerHTML = output.outerHTML;
+    // output.remove();
+  }
+
+  return null;
 }

@@ -1,27 +1,28 @@
-import React from 'react';
+import React, { type ReactNode } from 'react';
 
 interface ISelectorProps {
-  setValue: (value: string) => void;
+  onChange?: () => void;
+  onChangeCustom?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   startValue: string;
-  listSelectors: Array<object>;
+  listSelectors: Array<ReactNode>;
   selectClasses: string;
-  optionClasses?: string;
 }
 
-const Selector: React.FC<ISelectorProps> = ({ listSelectors, startValue, setValue, selectClasses, optionClasses }) => {
-  const handleChangeValue = (newValue: string) => {
-    setValue(newValue);
+const Selector: React.FC<ISelectorProps> = ({ listSelectors, startValue, onChange, selectClasses, onChangeCustom }) => {
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    if (onChangeCustom) {
+      onChangeCustom(e);
+      return;
+    }
+
+    if (onChange) {
+      onChange();
+    }
   };
 
   return (
-    <select onChange={(e) => handleChangeValue(e.target.value)} defaultValue={startValue} className={selectClasses}>
-      {listSelectors.map((selectorObj: any) => {
-        return (
-          <option key={selectorObj.caption} value={selectorObj.name} className={optionClasses ?? ''}>
-            {selectorObj.caption}
-          </option>
-        );
-      })}
+    <select onChange={handleChange} value={startValue} className={selectClasses}>
+      {listSelectors}
     </select>
   );
 };
