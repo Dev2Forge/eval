@@ -15,13 +15,14 @@ import { Editor } from 'ace-builds';
 import LoaderInfinity from '../components/Loader';
 import { modeOptionsFromList, outputMoesOptionsFromList, themesOptionsFromList } from '../tsx/utils';
 
+ace.toString();
+
 export default function Playground() {
   const [loading, setLoading] = React.useState(true);
   const [mode, setMode] = React.useState('javascript');
   const [theme, setTheme] = React.useState('chaos');
   const [editorValue, setEditorValue] = React.useState(INITIAL_CODE);
   const [engine, setEngine] = React.useState('');
-  const [scripts, setScripts] = React.useState<string[]>([]);
   const [output, setOutput] = React.useState<any>('Output will be displayed here...');
   const [modesFiltered, setModes] = React.useState<CodapiEngineResponse[]>([]);
   const [outputMode, setOutputMode] = React.useState('table');
@@ -91,9 +92,6 @@ export default function Playground() {
 
   useEffect(() => {
     loadWasiScripts();
-  }, [scripts]);
-
-  useEffect(() => {
     const _engine = getEngineByMode(mode, 'without')?.engine || '';
     setEngine(_engine);
 
@@ -102,7 +100,7 @@ export default function Playground() {
     const events = ['result', 'error'];
     events.forEach((event) => {
       codapiSnippet?.removeEventListener(event, () => {});
-      codapiSnippet?.addEventListener(event, (e) => {
+      codapiSnippet?.addEventListener(event, () => {
         getCodapiOutput('#codapi-output');
       });
     });

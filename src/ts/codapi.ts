@@ -1,5 +1,4 @@
 import type { Mode } from 'ace-builds/src-noconflict/ext-modelist';
-import axios from 'axios';
 
 export enum ECodapiLanguagesWithoutServer {
   JAVASCRIPT = 'Javascript|browser',
@@ -51,50 +50,23 @@ export enum ECodapiLanguagesWithServer {
 
 export const OUTPUT_MODES = [{ text: 'Plain text' }, { table: 'JSON like a table' }, { svg: 'SVG' }, { html: 'HTML elements' }, { dom: 'DOM elements, like chart.js' }];
 
-class Response {
-  status?: number;
-  data?: any;
-  error?: any;
+// class Response {
+//   status?: number;
+//   data?: any;
+//   error?: any;
 
-  constructor(status: number = 200, data: any = null, error: any = null) {
-    this.status = status;
-    this.data = data;
-    this.error = error;
-  }
-}
+//   constructor(status: number = 200, data: any = null, error: any = null) {
+//     this.status = status;
+//     this.data = data;
+//     this.error = error;
+//   }
+// }
 
-interface ICodapiExecData {
-  code: string;
-  mode: string;
-  timeout?: number;
-}
-
-function changeJsToTs(m: string): string {
-  let mode = m.toLowerCase();
-
-  if (mode === 'javascript') {
-    mode = 'typescript';
-  }
-
-  return mode;
-}
-
-export async function exec(data: ICodapiExecData): Promise<Response> {
-  let response: Response = new Response();
-  // const mode = changeJsToTs(data.mode);
-  const dataSend = { sandbox: data.mode, command: 'run', files: { '': data.code }, engine: 'browser' };
-
-  try {
-    const req = await axios.post('https://api.codapi.org/v1/exec', dataSend);
-    const res = await req.data;
-    response.status = req.status;
-    response.data = res;
-  } catch (e) {
-    response.error = e;
-  }
-
-  return response;
-}
+// interface ICodapiExecData {
+//   code: string;
+//   mode: string;
+//   timeout?: number;
+// }
 
 export class CodapiEngineResponse {
   engine: string;

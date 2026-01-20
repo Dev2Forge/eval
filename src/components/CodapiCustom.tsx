@@ -27,7 +27,6 @@ const CodapiCustom = ({ language, engine, classes, output, caller, selector, out
   return (
     <div className={classes}>
       <div className="sr-only">
-        {/* <Selector listSelectors={options} startValue={selectorStartValue} onChangeCustom={onChangeSelector} selectClasses="custom-select bg-zinc-900 border-0 focus-visible:outline-none rounded-2xl p-1 m-4" /> */}
         {/* @ts-ignore */}
         <codapi-snippet engine={engine} sandbox={language} editor="external" selector={selector} output-mode={outputMode}></codapi-snippet>
       </div>

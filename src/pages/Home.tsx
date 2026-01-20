@@ -9,42 +9,48 @@ export default function Home() {
         </div>
         <article className="mt-4">
           <p>Experience instant coding: switch languages, preview results live, and collaborate effortlessly. Eval empowers you to experiment, learn, and build—all in one powerful playground.</p>
+          <div className="divider"></div>
+          <section className="mt-5">
+            <header className="text-center">
+              <h2 className="font-bold text-2xl">Supported Languages (Experimental)</h2>
+            </header>
 
-          <div className="carousel w-full">
-            <div id="item2" className="carousel-item w-full">
-              <img src="./src/assets/images/png/python.png" className="w-full" />
-            </div>
-            <div id="item4" className="carousel-item w-full">
-              <img src="./src/assets/images/png/ruby.png" className="w-full" />
-            </div>
-            <div id="item1" className="carousel-item w-full">
-              <img src="./src/assets/images/png/lua.png" className="w-full" />
-            </div>
-            <div id="item1" className="carousel-item w-full">
-              <img src="./src/assets/images/png/js.png" className="w-full" />
-            </div>
+            <div className="mt-12 carousel w-full">
+              <div id="item1" className="carousel-item w-full">
+                <img src="./src/assets/images/png/python.png" className="w-full" />
+              </div>
+              <div id="item2" className="carousel-item w-full">
+                <img src="./src/assets/images/png/ruby.png" className="w-full" />
+              </div>
+              <div id="item3" className="carousel-item w-full">
+                <img src="./src/assets/images/png/lua.png" className="w-full" />
+              </div>
+              <div id="item4" className="carousel-item w-full">
+                <img src="./src/assets/images/png/js.png" className="w-full" />
+              </div>
 
-            <div id="item3" className="carousel-item w-full">
-              <img src="./src/assets/images/png/php.png" className="w-full" />
+              <div id="item5" className="carousel-item w-full">
+                <img src="./src/assets/images/png/php.png" className="w-full" />
+              </div>
             </div>
-          </div>
-          <div className="flex w-full justify-center gap-2 py-2">
-            <a href="#item1" className="btn btn-xs">
-              1
-            </a>
-            <a href="#item2" className="btn btn-xs">
-              2
-            </a>
-            <a href="#item3" className="btn btn-xs">
-              3
-            </a>
-            <a href="#item4" className="btn btn-xs">
-              4
-            </a>
-            <a href="#item5" className="btn btn-xs">
-              5
-            </a>
-          </div>
+            <div className="flex w-full justify-center gap-2 py-2">
+              <a href="#item1" className="btn btn-xs">
+                1
+              </a>
+              <a href="#item2" className="btn btn-xs">
+                2
+              </a>
+              <a href="#item3" className="btn btn-xs">
+                3
+              </a>
+              <a href="#item4" className="btn btn-xs">
+                4
+              </a>
+              <a href="#item5" className="btn btn-xs">
+                5
+              </a>
+            </div>
+          </section>
         </article>
       </div>
 
