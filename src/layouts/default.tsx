@@ -17,7 +17,6 @@ const DefaultLayout: React.FC = () => {
           <nav className="flex items-center justify-center *:btn *:btn-sm *:focus:outline-none gap-1">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/playground">Playground</NavLink>
-            <NavLink to="/about">About</NavLink>
           </nav>
 
           <GithubButtons classesAditional="lg:flex md:flex sm:flex hidden" />
