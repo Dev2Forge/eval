@@ -59,9 +59,9 @@ http://localhost:5173
 
 ### UI/UX
  * [ ] Expand Dark/Light mode toggling to the entire web interface (currently limited to the Editor component).
- * [ ] Improve mobile responsiveness.
+ * [ ] Improve minors fixes to mobile responsiveness.
 
-##🤝 Credits & Technologies
+## 🤝 Credits & Technologies
 This project stands on the shoulders of giants:
  * Execution Engine: codapi-js (via @antonz/codapi).
  * Editor Core: Ace Builds.
