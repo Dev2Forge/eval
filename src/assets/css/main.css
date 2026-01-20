@@ -1,21 +1,12 @@
-@import url('https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css');
 @import url('./external.css');
 @import url('./override.css');
-@import url('./bg_animation.css');
 
 :root {
-  --bulma-primary: #ffa500;
   overflow-x: hidden !important;
 }
 
 body {
   font-family: 'Fira Code', monospace;
-  background: transparent;
-}
-
-header h1 {
-  color: var(--bulma-primary);
-  font-weight: bold;
 }
 
 pre:focus,
@@ -26,7 +17,7 @@ code:focus {
 .output-mode-select {
   border: none;
   border-radius: 5px 15px;
-  box-shadow: 0 2px 6px rgba(243, 243, 243, 0.311);
+  box-shadow: 0 2px 6px var(--color-zinc-100);
   padding: 10px 15px;
   margin-bottom: 10px;
 }
@@ -71,7 +62,7 @@ footer {
 }
 
 a {
-  color: #ffa500;
+  color: var(--color-amber-500);
 }
 
 #details-code-run summary:hover {
@@ -82,4 +73,43 @@ a {
   cursor: text;
   background: transparent;
   backdrop-filter: blur(5px);
+}
+
+.custom-select {
+  appearance: base-select;
+  -moz-appearance: base-select;
+}
+
+.custom-select::picker(select) {
+  appearance: base-select;
+  -moz-appearance: base-select;
+  scrollbar-color: var(--color-amber-200) transparent !important;
+  scrollbar-width: thin !important;
+  background-color: var(--color-zinc-900);
+  color: var(--color-amber-500);
+  border-radius: 10px;
+}
+
+.selectorOption {
+  border-radius: 6px;
+  background-color: var(--color-zinc-900);
+}
+
+.selectorOption:checked {
+  background: var(--color-amber-500);
+  color: var(--color-gray-950);
+}
+
+.selectorOption::checkmark {
+  color: var(--color-amber-50);
+}
+
+.selectorOption:hover {
+  background: var(--color-amber-200);
+  color: var(--color-gray-950);
+  cursor: pointer !important;
+}
+
+.selectorOption::-webkit-scrollbar {
+  background-color: aqua;
 }

@@ -10,13 +10,19 @@
 }
 
 .typewriter h1 {
+  color: var(--color-amber-500);
+  font-weight: bold;
   overflow: hidden;
-  border-right: 0.15em solid orange;
+  border-right: 0.15em solid var(--color-orange-400);
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.15em;
-  -webkit-animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  -webkit-animation:
+    typing 3.5s steps(40, end),
+    blink-caret 0.75s step-end infinite;
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret 0.75s step-end infinite;
 }
 
 /* The typing effect */
@@ -44,7 +50,7 @@
     border-color: transparent;
   }
   50% {
-    border-color: orange;
+    border-color: var(--color-amber-500);
   }
 }
 @keyframes blink-caret {
@@ -53,6 +59,6 @@
     border-color: transparent;
   }
   50% {
-    border-color: orange;
+    border-color: var(--color-amber-500);
   }
 }

@@ -1,0 +1,53 @@
+.codapi-snippet {
+  /* width: 100vw; */
+  border-radius: 5px;
+  box-shadow: 0 2px 15px var(--color-zinc-950);
+  padding: 20px;
+}
+
+.codapi-output {
+  /* width: 100%; */
+  display: block;
+}
+
+.codapi-output pre {
+  overflow: scroll;
+  max-height: 40vh;
+}
+
+.codapi-output pre {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.codapi-output pre::-webkit-scrollbar {
+  display: none;
+}
+
+.codapi-output table {
+  border: 1px solid var(--color-zinc-100);
+  padding: 10px;
+  width: 100%;
+}
+
+.codapi-output table th,
+.codapi-output table td {
+  border: 1px solid var(--color-zinc-100);
+  padding: 10px;
+}
+
+.codapi-output table th {
+  background-color: var(--color-gray-950);
+  text-align: center !important;
+}
+
+.codapi-toolbar > button {
+  border-radius: 5px 15px;
+  box-shadow: 0 2px 16px var(--color-zinc-950);
+  padding: 10px 15px;
+}
+
+.codapi-toolbar > button:hover {
+  cursor: pointer;
+  background-color: var(--color-amber-700);
+}
