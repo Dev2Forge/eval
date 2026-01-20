@@ -1,5 +1,3 @@
-GitHub Copilot Chat Assistant
-
 # eval | Code Playground
 A lightweight and modern multi-language playground for quick code experimentation. Run `JavaScript`, `Python`, `Ruby`, `PHP`, and `Lua` directly in your interface.  
 Engine & Architecture:  
