@@ -2,8 +2,8 @@ name: Deploy React to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'web-v*'
   workflow_dispatch:
 
 permissions:
