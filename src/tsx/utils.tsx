@@ -21,7 +21,6 @@ export function themesOptionsFromList(list: Array<ThemesObj>): ReactNode[] {
   const options: ReactNode[] = [];
 
   list.forEach((item) => {
-    // añadir atributo select si si es "chaos", 2 opciones, option sera alguna de las dos item.name === 'chaos' ? 'selected' : ''
     const option = (
       <option className={'selectorOption'} key={item.caption} value={item.name}>
         {`${item.caption} (${item.isDark ? 'Dark' : 'Light'})`}
