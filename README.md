@@ -1,9 +1,11 @@
 # eval | Code Playground
 A lightweight and modern multi-language playground for quick code experimentation. Run `JavaScript`, `Python`, `Ruby`, `PHP`, and `Lua` directly in your interface.  
-Engine & Architecture:  
+
+## Engine & Architecture
 This project is built with React 19 and Vite, featuring a robust editor experience powered by React Ace (based on Ace Builds). Code execution is handled entirely client-side using codapi.
 
-> ⚠️ Browser Only Runtimes  
+> [!NOTE]
+> Browser Only Runtimes  
 > All supported languages in this playground execute entirely in the browser. There is no backend involved for code execution.  
 > For technical details on how these runtimes work without a server, please refer to the codapi-js only-browser documentation.
 > 
